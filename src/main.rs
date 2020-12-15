@@ -1,5 +1,4 @@
 use fantoccini::{ Client as FClient, Locator as FLocator};
-use tokio::prelude::*;
 
 #[tokio::main]
 async fn main() -> Result<(), fantoccini::error::CmdError> {
