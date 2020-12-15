@@ -6,3 +6,4 @@ publish = false
 
 [dependencies]
 fantoccini = '0.14.2'
+tokio = '0.3.6'
