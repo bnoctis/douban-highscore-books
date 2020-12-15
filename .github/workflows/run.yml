@@ -1,0 +1,8 @@
+name: run
+on: [push]
+jobs:
+	run:
+		runs-on: ubuntu-latest
+		steps:
+			uses: actions/checkout@v2
+			run: cargo run
