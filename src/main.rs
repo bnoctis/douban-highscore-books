@@ -2,7 +2,7 @@ use std::error::Error;
 use fantoccini::{ Client as FClient, Locator as FLocator};
 
 #[tokio::main]
-async fn main() -> Result<(), Error> {
+async fn main() -> Result<(), dyn Error> {
     let mut c = FClient::new("http://localhost:4444").await.expect("failed to connect to WebDriver");
 
     // first, go to the Wikipedia page for Foobar
