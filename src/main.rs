@@ -1,3 +1,4 @@
+use std::error::Error;
 use fantoccini::{ Client as FClient, Locator as FLocator};
 
 #[tokio::main]
