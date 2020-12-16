@@ -1,0 +1,9 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+    - script: bash ci/run_geckodriver.sh
+    - script: cargo run
