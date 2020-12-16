@@ -7,7 +7,8 @@ jobs:
       RUST_BACKTRACE: full
     steps:
     - run: geckodriver &
-    - run: curl -H 'Content-Type: application/json' -d '{"capabilities": {"alwaysMatch": {"browserName": "firefox"}}}' http://localhost:4444/session
+    - run: |
+      curl -H 'Content-Type: application/json' -d '{"capabilities": {"alwaysMatch": {"browserName": "firefox"}}}' http://localhost:4444/session
     - uses: actions/checkout@v2
     - uses: actions/cache@v2
       with:
