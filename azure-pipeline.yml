@@ -5,5 +5,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-    - script: bash ci/run_geckodriver.sh
-    - script: cargo run
+- task: Cache@2
+  inputs:
+    key: '"$(Agent.OS)" | cargo | Cargo.toml'
+    restoreKeys: '"$(Agent.OS)" | cargo | Cargo.toml'
+    path: |
+      ~/.cargo/registry
+      ~/.cargo/git
+      target
+- script: bash ci/run_geckodriver.sh
+- script: cargo run
