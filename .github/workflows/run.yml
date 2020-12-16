@@ -6,10 +6,10 @@ jobs:
     env:
       RUST_BACKTRACE: 1
     steps:
+    - uses: actions/checkout@v2
     - run: pwd && ls -l
     - run: bash ci/run_geckodriver.sh
       name: run geckodriver
-    - uses: actions/checkout@v2
     - uses: actions/cache@v2
       with:
         path: |
