@@ -4,7 +4,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     env:
-      RUST_BACKTRACE: 1
+      RUST_BACKTRACE: full
     steps:
     - uses: actions/checkout@v2
     - uses: actions/cache@v2
@@ -15,4 +15,4 @@ jobs:
           target
         key: ${{ runner.os }}-cargo-${{ hashFiles('Cargo.toml') }}
     - run: cargo run
-      continue-on-error: true
+      # continue-on-error: true
