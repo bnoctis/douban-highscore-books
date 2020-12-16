@@ -4,11 +4,10 @@ jobs:
   run:
     runs-on: ubuntu-latest
     env:
-      RUST_BACKTRACE: full
+      RUST_BACKTRACE: 1
     steps:
-    - run: geckodriver &
-    - run: |
-      curl -H 'Content-Type: application/json' -d '{"capabilities": {"alwaysMatch": {"browserName": "firefox"}}}' http://localhost:4444/session
+    - run: bash ci/run_geckodriver.sh
+      name: run geckodriver
     - uses: actions/checkout@v2
     - uses: actions/cache@v2
       with:
